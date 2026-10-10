@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qiva Reach | Post on LinkedIn every week, in your own voice</title>
+<meta name="description" content="Qiva Reach drafts LinkedIn posts and comments that sound like you, schedules them through LinkedIn's official API, and brings real people from your niche to engage. Join the waitlist.">
+<meta property="og:title" content="Qiva Reach | Post on LinkedIn every week, in your own voice">
+<meta property="og:description" content="AI drafts in your voice. You approve every word. Founding members get 40% off annual plans.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#1B1F3B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%231B1F3B'/%3E%3Cg transform='translate(6 6) scale(.81)'%3E%3Ccircle cx='28' cy='32' r='16' fill='none' stroke='%23fff' stroke-width='8'/%3E%3Cpath d='M39.5 43.5 50 54' stroke='%23fff' stroke-width='8' stroke-linecap='round'/%3E%3Ccircle cx='51' cy='12' r='7' fill='%23F2A900'/%3E%3C/g%3E%3C/svg%3E">
+<meta property="og:url" content="https://qivareach.com/">
+<meta property="og:image" content="https://qivareach.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="canonical" href="https://qivareach.com/">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Qiva Reach","applicationCategory":"BusinessApplication","operatingSystem":"Web, Chrome","description":"An AI co-pilot that drafts LinkedIn posts and comments in your own voice, publishes through LinkedIn's official API and connects you with a real engagement community.","offers":{"@type":"Offer","price":"0","priceCurrency":"INR","description":"Free plan; paid plans from INR 499 a month"},"publisher":{"@type":"Organization","name":"QivaLabs LLP","address":{"@type":"PostalAddress","addressLocality":"Udaipur","addressRegion":"Rajasthan","addressCountry":"IN"}}}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B1F3B; --ink-2:#2A2F55; --paper:#F3F5F4; --white:#FFFFFF;
+  --marigold:#F2A900; --marigold-soft:#FFE8A8; --peacock:#00645A; --peacock-soft:#D4ECE6;
+  --slate:#5D6475; --line:#D9DEDC; --sindoor:#C8331E;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+  --r-m:12px; --r-l:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{display:block}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);margin:0;letter-spacing:-.02em;line-height:1.05}
+p{margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .2s}
+.nav.scrolled{border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:750;font-size:22px;letter-spacing:-.03em;white-space:nowrap}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav ul a{text-decoration:none;font-size:15px;color:var(--slate);padding:8px 12px;border-radius:8px}
+.nav ul a:hover{color:var(--ink);background:var(--white)}
+@media (max-width:880px){.nav ul{display:none}.nav .btn{margin-left:auto}}
+@media (max-width:420px){.logo{font-size:19px}.nav .wrap{gap:12px}.nav .btn-sm{padding:8px 12px}}
+@media (max-width:560px){.wl-row .btn{flex:1 1 100%}.founding:empty{display:none}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:650 16px var(--display);letter-spacing:-.01em;border-radius:var(--r-m);padding:13px 22px;border:2px solid transparent;cursor:pointer;text-decoration:none;white-space:nowrap;transition:background .15s,transform .1s}
+.btn:active{transform:translateY(1px)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--ink-2)}
+.btn-gold{background:var(--marigold);color:var(--ink)}
+.btn-gold:hover{background:#FFBA1F}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn-line:hover{background:var(--white)}
+.btn-sm{padding:9px 16px;font-size:14px}
+.btn[disabled]{opacity:.55;cursor:progress}
+
+/* hero */
+.hero{padding:72px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+@media (max-width:960px){.hero .wrap{grid-template-columns:1fr;gap:48px}.hero{padding:48px 0 72px}}
+.hero h1{font-size:clamp(44px,6.4vw,84px);font-weight:800;letter-spacing:-.045em;line-height:.98}
+.hero .lede{font-size:20px;line-height:1.55;color:#3A3F5C;margin-top:24px;max-width:36ch}
+@media (max-width:560px){.hero .lede{font-size:18px}}
+
+/* form */
+.wl{margin-top:32px;max-width:540px}
+.wl-row{display:flex;gap:10px;flex-wrap:wrap}
+.wl-row .input{flex:1 1 220px}
+.input,.select{font:400 16px var(--body);color:var(--ink);background:var(--white);border:1.5px solid var(--line);border-radius:var(--r-m);padding:13px 14px;min-width:0}
+.input:focus,.select:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 4px var(--marigold-soft)}
+.input.err{border-color:var(--sindoor)}
+.select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231B1F3B' stroke-width='1.8'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px;flex:1 1 200px}
+.wl-msg{font-size:14px;margin-top:10px;color:var(--slate);min-height:22px}
+.wl-msg.err{color:var(--sindoor);font-weight:600}
+.wl-done{display:none;background:var(--white);border:1px solid var(--line);border-radius:var(--r-l);padding:24px}
+.wl.is-done form{display:none}
+.wl.is-done .wl-done{display:block}
+.wl-done h3{font-size:24px}
+.wl-done p{color:var(--slate);margin-top:6px;font-size:16px}
+.ref{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.ref input{flex:1 1 220px;font:500 14px var(--body);background:var(--paper);border:1.5px dashed var(--marigold);border-radius:var(--r-m);padding:11px 12px;color:var(--ink)}
+.trust{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;font-size:14px;color:var(--slate)}
+.trust span{display:flex;align-items:center;gap:6px}
+.trust svg{width:16px;height:16px;stroke:var(--peacock);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+
+/* composer mock — the signature moment */
+.composer{background:var(--white);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 60px -30px rgba(27,31,59,.35);overflow:hidden}
+.c-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line);font-size:14px}
+.c-top b{font-family:var(--display);font-size:15px}
+.c-dots{display:flex;gap:6px}
+.c-dots i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.c-body{padding:20px}
+.tones{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.tone{border:1.5px solid var(--line);background:transparent;border-radius:999px;padding:6px 12px;font:600 13px var(--body);color:var(--ink);cursor:pointer}
+.tone[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.who{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+.av{width:42px;height:42px;border-radius:50%;background:var(--marigold);display:grid;place-items:center;font:750 15px var(--display);color:var(--ink);flex:none}
+.who small{display:block;color:var(--slate);font-size:12.5px;line-height:1.3}
+.hook{font-size:17px;line-height:1.5;min-height:3em;transition:opacity .18s}
+.hook.swap{opacity:0}
+.hook mark{background:linear-gradient(transparent 60%,var(--marigold-soft) 60%);color:inherit}
+.fold-line{display:flex;align-items:center;gap:10px;margin:14px 0 0;border:0;background:none;padding:0;width:100%;cursor:pointer;color:var(--slate);font:600 13px var(--body)}
+.fold-line::before{content:"";flex:1;border-top:2px dashed var(--marigold)}
+.rest{font-size:16px;color:#3A3F5C;max-height:0;overflow:hidden;transition:max-height .3s ease}
+.rest.open{max-height:260px}
+.rest p{margin-top:12px}
+.c-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;padding:14px 20px;border-top:1px solid var(--line);background:#FAFBFB}
+.score{font-size:13px;color:var(--slate)}
+.score b{color:var(--peacock)}
+.c-note{font-size:13px;color:var(--slate);margin-top:12px;text-align:center}
+
+/* sections */
+section.s{padding:104px 0;border-top:1px solid var(--line)}
+@media (max-width:720px){section.s{padding:72px 0}}
+.s-head{max-width:720px;margin-bottom:48px}
+.s-head h2{font-size:clamp(34px,4.6vw,56px);font-weight:780;letter-spacing:-.035em}
+.s-head p{font-size:19px;color:var(--slate);margin-top:16px;max-width:58ch}
+
+/* pains */
+.pains{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+.pains div{padding:22px 0;border-bottom:2px dashed var(--line)}
+.pains h3{font-size:22px;font-weight:700}
+.pains p{color:var(--slate);margin-top:6px}
+@media (max-width:760px){.pains{grid-template-columns:1fr}}
+
+/* steps (a real sequence) */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:st;list-style:none;margin:0;padding:0}
+.steps li{position:relative;padding-top:64px}
+.steps li::before{counter-increment:st;content:counter(st);position:absolute;top:0;left:0;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:750 18px var(--display)}
+.steps li::after{content:"";position:absolute;top:22px;left:56px;right:-12px;border-top:2px dashed var(--marigold)}
+.steps li:last-child::after{display:none}
+.steps h3{font-size:22px}
+.steps p{color:var(--slate);margin-top:8px;font-size:16px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr;gap:36px 24px}.steps li::after{display:none}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* features */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.feat article{padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white)}
+.feat h3{font-size:22px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.feat .when{font:600 12.5px var(--body);letter-spacing:0;color:var(--peacock);background:var(--peacock-soft);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.feat .when.later{color:var(--slate);background:var(--paper)}
+.feat p{color:var(--slate);margin-top:10px;font-size:16px}
+.feat ul{margin:14px 0 0;padding-left:18px;font-size:15px;color:#3A3F5C}
+.feat li{margin-top:4px}
+@media (max-width:960px){.feat{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.feat{grid-template-columns:1fr}}
+
+/* safety */
+.safe{background:var(--ink);color:#fff;border-top:0!important}
+.safe .s-head p{color:#C3C7DD}
+.safe-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.safe-col{border-radius:var(--r-l);padding:28px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12)}
+.safe-col h3{font-size:22px;margin-bottom:14px}
+.safe-col ul{list-style:none;margin:0;padding:0}
+.safe-col li{display:flex;gap:12px;padding:10px 0;border-top:1px solid rgba(255,255,255,.1);font-size:16px;color:#E3E5F0}
+.safe-col li:first-child{border-top:0}
+.safe-col svg{flex:none;width:20px;height:20px;margin-top:3px;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.yes svg{stroke:#5FD3BE}.no svg{stroke:#FF8C79}
+@media (max-width:760px){.safe-grid{grid-template-columns:1fr}}
+
+/* pricing */
+.toggles{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.seg{display:inline-flex;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:4px}
+.seg button{border:0;background:transparent;border-radius:999px;padding:8px 16px;font:600 14px var(--body);color:var(--slate);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.seg em{font-style:normal;color:var(--peacock);font-weight:700}
+.seg button[aria-pressed="true"] em{color:var(--marigold)}
+.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+.plan{background:var(--white);border:1px solid var(--line);border-radius:var(--r-l);padding:26px;display:flex;flex-direction:column}
+.plan.pick{border:2px solid var(--ink);position:relative}
+.plan.pick::before{content:"Most founders pick this";position:absolute;top:-13px;left:22px;background:var(--marigold);color:var(--ink);font:700 12.5px var(--body);padding:4px 10px;border-radius:999px}
+.plan h3{font-size:22px}
+.plan .who-for{color:var(--slate);font-size:15px;margin-top:4px;min-height:48px}
+.price{margin-top:18px;font-family:var(--display);font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.price small{font:500 15px var(--body);color:var(--slate);letter-spacing:0}
+.billed{font-size:13.5px;color:var(--slate);margin-top:6px;min-height:21px}
+.founding{margin-top:10px;font-size:13.5px;font-weight:600;color:var(--ink);background:var(--marigold-soft);border-radius:8px;padding:6px 10px;min-height:32px}
+.founding:empty{visibility:hidden}
+.plan ul{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line);font-size:15px;display:grid;gap:8px;flex:1}
+.plan li{display:flex;gap:8px}
+.plan li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--marigold);margin-top:9px}
+.plan .btn{margin-top:22px;width:100%}
+@media (max-width:1040px){.plans{grid-template-columns:1fr 1fr;gap:28px 16px}}
+@media (max-width:560px){.plans{grid-template-columns:1fr}}
+.price-note{margin-top:20px;font-size:14px;color:var(--slate)}
+
+/* founding cta */
+.cta{background:var(--marigold);border-top:0!important}
+.cta .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.cta h2{font-size:clamp(36px,5vw,64px);font-weight:800;letter-spacing:-.04em}
+.cta p.big{font-size:19px;margin-top:16px;max-width:42ch;color:#3B2A00}
+.cta .wl{margin-top:0}
+.cta .input,.cta .select{border-color:rgba(27,31,59,.25)}
+.cta .wl-msg{color:#4A3600}
+@media (max-width:860px){.cta .wrap{grid-template-columns:1fr;gap:28px}}
+
+/* faq */
+.faq{max-width:820px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0;font:700 20px var(--display);letter-spacing:-.015em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:14px;height:14px;border-right:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:rotate(45deg) translateY(-4px);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(225deg) translateY(-2px)}
+.faq details p{padding:0 0 22px;color:var(--slate);max-width:64ch}
+
+footer{background:var(--ink);color:#C3C7DD;padding:56px 0 40px;font-size:14px}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+footer .logo{color:#fff}
+footer h4{font:700 15px var(--display);color:#fff;margin:0 0 10px}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+footer a{text-decoration:none}
+footer a:hover{color:#fff;text-decoration:underline}
+footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:12px 18px;border-radius:var(--r-m);font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:all .2s;z-index:60}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* single orchestrated load moment: the composer types its first hook */
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.composer{animation:rise .6s .1s both cubic-bezier(.2,.7,.2,1)}
+
+/* waitlist production additions */
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.consent{font-size:13px;color:var(--slate);margin-top:4px;max-width:52ch}
+.cta .consent{color:#4A3600}
+.linkbtn{border:0;background:none;padding:0;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.foot-link{color:#C3C7DD}.foot-link:hover{color:#fff}
+.wl-count{margin-top:14px;font:600 15px var(--display);color:var(--peacock)}
+.done-pos{font:700 17px var(--display)!important;color:var(--ink)!important;margin-top:10px!important}
+.share-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.not-you{margin-top:14px;font-size:13.5px;color:var(--slate)}
+.road{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.road::before{content:"";position:absolute;left:0;right:0;top:15px;border-top:2px dashed var(--marigold)}
+.road>li{position:relative;padding-top:48px}
+.road>li::before{content:"";position:absolute;top:8px;left:0;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--ink)}
+.road>li.now::before{background:var(--marigold);border-color:var(--marigold)}
+.when-pill{display:inline-block;font:700 13px var(--body);background:var(--white);border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-bottom:10px}
+.road .now .when-pill{background:var(--marigold);border-color:var(--marigold)}
+.road h3{font-size:24px}
+.road p,.road ul{color:var(--slate);font-size:15.5px;margin-top:8px}
+.road ul{padding-left:18px;margin-bottom:0}
+.road ul li{margin-top:4px}
+@media (max-width:900px){.road{grid-template-columns:1fr 1fr;gap:36px 24px}.road::before{display:none}}
+@media (max-width:540px){.road{grid-template-columns:1fr}}
+dialog{border:0;border-radius:var(--r-l);padding:0;max-width:600px;width:calc(100% - 32px);color:var(--ink);box-shadow:0 30px 80px rgba(27,31,59,.35)}
+dialog::backdrop{background:rgba(27,31,59,.55)}
+.dlg{padding:28px;display:grid;gap:12px;font-size:15.5px}
+.dlg h2{font-size:26px;margin-bottom:4px}
+.dlg .btn{justify-self:start;margin-top:8px}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Qiva Reach home">
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true"><circle cx="28" cy="32" r="16" fill="none" stroke="#1B1F3B" stroke-width="8"/><path d="M39.5 43.5 50 54" stroke="#1B1F3B" stroke-width="8" stroke-linecap="round"/><circle cx="51" cy="12" r="7" fill="#F2A900"/></svg>
+      qiva reach
+    </a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#safety">Account safety</a></li>
+        <li><a href="#roadmap">Roadmap</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-ink btn-sm" href="#join">Join the waitlist</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Post on LinkedIn every week, in your own voice.</h1>
+        <p class="lede">Qiva Reach drafts posts and comments that sound like you, publishes them through LinkedIn's official API, and brings real people from your niche to engage in the first hour. You approve every word.</p>
+
+        <div class="wl" id="join" data-wl>
+          <form novalidate>
+            <div class="wl-row">
+              <label class="sr" for="email1">Work email</label>
+              <input class="input" id="email1" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" required>
+              <button class="btn btn-gold" type="submit">Join the waitlist</button>
+            </div>
+            <div class="wl-row" style="margin-top:10px">
+              <label class="sr" for="role1">What describes you best?</label>
+              <select class="select" id="role1" name="role">
+                <option value="">What describes you best? (optional)</option>
+                <option>Founder</option>
+                <option>Consultant, coach or freelancer</option>
+                <option>B2B marketer</option>
+                <option>Agency owner</option>
+                <option>Job seeker</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <p class="wl-msg" aria-live="polite">Founding members get 40% off annual plans. First 200 only.</p>
+          <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <p class="consent">By joining, you agree to receive emails about Qiva Reach's launch. Unsubscribe any time. <button class="linkbtn" type="button" data-privacy>Read the privacy notice</button></p>
+          </form>
+          <div class="wl-done" tabindex="-1">
+            <h3 class="done-title">You're on the list.</h3>
+            <p class="done-pos" hidden></p>
+            <p>We'll email you before launch with your founding-member price. Know someone who posts on LinkedIn? Send them your invite link.</p>
+            <div class="ref">
+              <label class="sr" for="ref1">Your invite link</label>
+              <input id="ref1" class="ref-link" type="text" readonly>
+              <button class="btn btn-ink btn-sm copy-ref" type="button">Copy link</button>
+            </div>
+            <div class="share-row">
+              <a class="btn btn-line btn-sm share-wa" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+              <a class="btn btn-line btn-sm share-li" href="#" target="_blank" rel="noopener">Share on LinkedIn</a>
+            </div>
+            <button class="linkbtn not-you" type="button">Not you? Join with a different email</button>
+          </div>
+        </div>
+
+        <p class="wl-count" id="wlCount" hidden></p>
+
+        <div class="trust">
+          <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>No LinkedIn password needed</span>
+          <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Nothing posts without your approval</span>
+          <span><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Priced in rupees</span>
+        </div>
+      </div>
+
+      <!-- the composer: try it -->
+      <div>
+        <div class="composer" aria-label="Interactive preview of the Qiva Reach post writer">
+          <div class="c-top"><div class="c-dots" aria-hidden="true"><i></i><i></i><i></i></div><b>Hook lab</b><span class="score" id="hookCount">Hook 1 of 4</span></div>
+          <div class="c-body">
+            <div class="tones" role="group" aria-label="Writing tone">
+              <button class="tone" type="button" data-tone="story" aria-pressed="true">Story-led</button>
+              <button class="tone" type="button" data-tone="direct" aria-pressed="false">Direct</button>
+              <button class="tone" type="button" data-tone="data" aria-pressed="false">Data-driven</button>
+              <button class="tone" type="button" data-tone="hinglish" aria-pressed="false">Hinglish-friendly</button>
+            </div>
+            <div class="who"><div class="av" aria-hidden="true">You</div><div><b>Your name</b><small>Founder · Draft in your voice</small></div></div>
+            <p class="hook" id="hook" aria-live="polite"></p>
+            <button class="fold-line" id="foldBtn" type="button" aria-expanded="false" aria-controls="rest">see more</button>
+            <div class="rest" id="rest"></div>
+          </div>
+          <div class="c-foot">
+            <span class="score">Above the fold: <b id="foldWords">0 words</b></span>
+            <button class="btn btn-line btn-sm" type="button" id="nextHook">Try another hook</button>
+          </div>
+        </div>
+        <p class="c-note">A sample of the writer. Your drafts learn from your own past posts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAINS -->
+  <section class="s" id="why">
+    <div class="wrap">
+      <div class="s-head">
+        <h2>You know you should post more. Here's why you don't.</h2>
+        <p>Most people who want to grow on LinkedIn run into the same six problems. Qiva Reach is built to fix all of them in one place.</p>
+      </div>
+      <div class="pains">
+        <div><h3>The blank page</h3><p>Three posts a week is a lot of writing. Generic AI tools make you sound like everyone else.</p></div>
+        <div><h3>The silent first hour</h3><p>A post that gets no early reactions is shown to very few people. You don't have a reliable circle that shows up.</p></div>
+        <div><h3>Comment fatigue</h3><p>Thoughtful comments on other people's posts bring profile visits, but writing fifteen a day takes an hour.</p></div>
+        <div><h3>No idea what works</h3><p>LinkedIn shows numbers, not answers. Which hooks, topics and times actually work for you?</p></div>
+        <div><h3>Five tools, five bills</h3><p>A writer, a scheduler, a pod tool and a comment extension, mostly billed in dollars.</p></div>
+        <div><h3>The fear of getting flagged</h3><p>Automation tools put your account at risk. Your LinkedIn profile is too valuable to gamble with.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="s" id="how">
+    <div class="wrap">
+      <div class="s-head">
+        <h2>From blank page to real conversations in four steps.</h2>
+        <p>Set up once in about five minutes. After that, a week of posts takes one sitting.</p>
+      </div>
+      <ol class="steps">
+        <li><h3>Teach it your voice</h3><p>Sign in with LinkedIn and paste a few of your past posts. Qiva Reach learns your tone, length and the phrases you never use.</p></li>
+        <li><h3>Draft and pick a hook</h3><p>Turn an idea, a voice note or a blog into a post. Choose from ten hooks and see exactly where "see more" will cut it off.</p></li>
+        <li><h3>Approve and schedule</h3><p>Edit anything, then schedule for the times your audience is active. It publishes through LinkedIn's official API.</p></li>
+        <li><h3>Your Circle shows up</h3><p>Members of your niche Circle get an alert and engage with your post themselves, by hand. You do the same for them.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="s" id="features">
+    <div class="wrap">
+      <div class="s-head">
+        <h2>Everything you need to grow, in one workspace.</h2>
+        <p>Launching in January 2027. Features marked "Early 2027" follow in the months after launch.</p>
+      </div>
+      <div class="feat">
+        <article><h3>Post writer <span class="when">At launch</span></h3><p>Ideas, full drafts and ten hook options per post, written in your voice.</p><ul><li>Tone presets, including Hinglish-friendly</li><li>Exact mobile and desktop preview</li><li>Bold, italic and line-break formatting</li></ul></article>
+        <article><h3>Scheduler <span class="when">At launch</span></h3><p>A drag-and-drop calendar that publishes on time through LinkedIn's official API.</p><ul><li>Weekly and monthly views</li><li>Email confirmation when a post goes live</li><li>Best-time suggestions <i>(early 2027)</i></li></ul></article>
+        <article><h3>Circles <span class="when">At launch</span></h3><p>Small, curated groups of 20–50 people in your niche who engage with each other's posts.</p><ul><li>Alerts when a member posts</li><li>One queue of posts to engage with</li><li>Fairness score so nobody only takes</li></ul></article>
+        <article><h3>Comment co-pilot <span class="when">At launch</span></h3><p>A Chrome extension that suggests three comments under any post. You edit and post it yourself.</p><ul><li>Written in your voice</li><li>Reply suggestions for your own posts <i>(early 2027)</i></li></ul></article>
+        <article><h3>Analytics <span class="when later">Early 2027</span></h3><p>Find out which topics, hooks and times work for you, with a short insight email every Friday.</p><ul><li>Post performance over time</li><li>Follower growth tracker</li></ul></article>
+        <article><h3>Agency workspace <span class="when later">Early 2027</span></h3><p>Manage many client profiles, each with its own voice, approvals and monthly report.</p><ul><li>Client approval links</li><li>Roles for your team</li><li>White-label reports <i>(mid 2027)</i></li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SAFETY -->
+  <section class="s safe" id="safety">
+    <div class="wrap">
+      <div class="s-head">
+        <h2>Your account stays yours.</h2>
+        <p>LinkedIn does not allow bots, auto-engagement or scraping, and accounts that use them get restricted. Qiva Reach is designed so that every action on LinkedIn is a click you make yourself.</p>
+      </div>
+      <div class="safe-grid">
+        <div class="safe-col yes">
+          <h3>What Qiva Reach does</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Signs you in with LinkedIn's official login. We never see your password.</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Publishes the posts you approved through LinkedIn's official sharing API.</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Writes comment suggestions into the comment box. You press Post.</li>
+            <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Sends your Circle an alert so real people choose to engage.</li>
+          </ul>
+        </div>
+        <div class="safe-col no">
+          <h3>What it never does</h3>
+          <ul>
+            <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Auto-like, auto-comment or auto-reshare anything.</li>
+            <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Send connection requests or messages for you.</li>
+            <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Scrape profiles, feeds or other people's data.</li>
+            <li><svg viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg>Run hidden browsers or store your LinkedIn session cookies.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section class="s" id="roadmap">
+    <div class="wrap">
+      <div class="s-head">
+        <h2>What ships, and when.</h2>
+        <p>Our public plan for the first year. Waitlist members get into the private beta first. Dates are targets; the feature list for each release is fixed.</p>
+      </div>
+      <ol class="road">
+        <li><span class="when-pill">December 2026</span><h3>Private beta</h3><p>50 people from the waitlist try everything below and shape the final details.</p></li>
+        <li class="now"><span class="when-pill">5 January 2027</span><h3>Public launch</h3><ul><li>Post writer and hook lab in your voice</li><li>Scheduler with official LinkedIn publishing</li><li>Circles and the engage queue</li><li>Comment co-pilot for Chrome</li><li>Free tools: hook generator, post formatter and more</li></ul></li>
+        <li><span class="when-pill">By March 2027</span><h3>V1</h3><ul><li>Agency workspace with client approvals</li><li>Analytics and Friday insight emails</li><li>Carousels and repurposing</li><li>Private Circles, WhatsApp alerts</li><li>Referral and affiliate programmes</li></ul></li>
+        <li><span class="when-pill">By June 2027</span><h3>V2</h3><ul><li>Company page tools and employee advocacy</li><li>White-label client reports</li><li>Content scoring</li><li>Image, document and video posts</li></ul></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="s" id="pricing">
+    <div class="wrap">
+      <div class="s-head">
+        <h2>Simple pricing, in your currency.</h2>
+        <p>Start with a 7-day free trial on any paid plan. Cancel any time.</p>
+      </div>
+      <div class="toggles">
+        <div class="seg" role="group" aria-label="Currency">
+          <button type="button" data-cur="inr" aria-pressed="true">₹ INR</button>
+          <button type="button" data-cur="usd" aria-pressed="false">$ USD</button>
+        </div>
+        <div class="seg" role="group" aria-label="Billing period">
+          <button type="button" data-bill="month" aria-pressed="false">Monthly</button>
+          <button type="button" data-bill="year" aria-pressed="true">Yearly <em>2 months free</em></button>
+        </div>
+      </div>
+      <div class="plans" id="plans"></div>
+      <p class="price-note">Prices exclude GST where it applies. Founding-member pricing applies to yearly plans for the first 200 customers and stays for as long as you keep the plan.</p>
+    </div>
+  </section>
+
+  <!-- FOUNDING CTA -->
+  <section class="s cta" id="founding">
+    <div class="wrap">
+      <div>
+        <h2>Be one of the first 200.</h2>
+        <p class="big">Founding members get 40% off any yearly plan for as long as they stay, early access to the private beta in December 2026, and a direct line to the two founders building it.</p>
+      </div>
+      <div class="wl" data-wl>
+        <form novalidate>
+          <div class="wl-row">
+            <label class="sr" for="email2">Work email</label>
+            <input class="input" id="email2" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@company.com" required>
+            <button class="btn btn-ink" type="submit">Join the waitlist</button>
+          </div>
+          <div class="wl-row" style="margin-top:10px">
+            <label class="sr" for="role2">What describes you best?</label>
+            <select class="select" id="role2" name="role">
+              <option value="">What describes you best? (optional)</option>
+              <option>Founder</option>
+              <option>Consultant, coach or freelancer</option>
+              <option>B2B marketer</option>
+              <option>Agency owner</option>
+              <option>Job seeker</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <p class="wl-msg" aria-live="polite">No spam. One email at launch, one with your price.</p>
+        <div class="hp" aria-hidden="true"><label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <p class="consent">By joining, you agree to receive emails about Qiva Reach's launch. Unsubscribe any time. <button class="linkbtn" type="button" data-privacy>Read the privacy notice</button></p>
+          </form>
+        <div class="wl-done" tabindex="-1">
+            <h3 class="done-title">You're on the list.</h3>
+            <p class="done-pos" hidden></p>
+            <p>We'll email you before launch with your founding-member price. Send your invite link to a friend who posts on LinkedIn.</p>
+            <div class="ref">
+              <label class="sr" for="ref2">Your invite link</label>
+              <input id="ref2" class="ref-link" type="text" readonly>
+              <button class="btn btn-ink btn-sm copy-ref" type="button">Copy link</button>
+            </div>
+            <div class="share-row">
+              <a class="btn btn-line btn-sm share-wa" href="#" target="_blank" rel="noopener">Share on WhatsApp</a>
+              <a class="btn btn-line btn-sm share-li" href="#" target="_blank" rel="noopener">Share on LinkedIn</a>
+            </div>
+            <button class="linkbtn not-you" type="button">Not you? Join with a different email</button>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="s" id="faq">
+    <div class="wrap">
+      <div class="s-head"><h2>Questions people ask us.</h2></div>
+      <div class="faq">
+        <details open><summary>Will using Qiva Reach get my LinkedIn account restricted?</summary><p>Qiva Reach is designed to stay within LinkedIn's rules: official login, official publishing API, and no automated likes, comments, messages or scraping. Every action on LinkedIn is a click you make. No tool can promise LinkedIn's decisions, but we built this one to avoid the behaviour that gets accounts flagged.</p></details>
+        <details><summary>Does it post automatically?</summary><p>Only the posts you have approved and scheduled. Nothing goes out without you pressing Schedule, and you can edit or cancel any post until it publishes.</p></details>
+        <details><summary>What exactly is a Circle?</summary><p>A small group of 20–50 professionals in a similar niche who agree to engage with each other's posts. When a member posts, the others get an alert and decide for themselves whether to react or comment. A fairness score keeps it balanced.</p></details>
+        <details><summary>Will the posts sound like AI?</summary><p>They start from your own past posts, your tone settings and a list of phrases you never use. Every edit you make teaches it more. You stay the editor.</p></details>
+        <details><summary>When does it launch, and what does the waitlist get me?</summary><p>Private beta starts in December 2026 and public launch is planned for January 2027. Waitlist members hear first, and the first 200 paying customers get 40% off yearly plans.</p></details>
+        <details><summary>Can my agency use it for clients?</summary><p>Yes. The Agency plan includes five client profiles, approval links for clients and team roles. More profiles can be added to the plan.</p></details>
+        <details><summary>What happens to my data?</summary><p>Your posts and voice profile are private to your workspace. You can export or delete your data at any time. We never sell data or use your posts to train models for anyone else.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="logo" href="#top" aria-label="Qiva Reach home">
+        <svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><circle cx="28" cy="32" r="16" fill="none" stroke="#fff" stroke-width="8"/><path d="M39.5 43.5 50 54" stroke="#fff" stroke-width="8" stroke-linecap="round"/><circle cx="51" cy="12" r="7" fill="#F2A900"/></svg>
+        qiva reach
+      </a>
+      <p style="margin-top:14px;max-width:34ch">The LinkedIn growth co-pilot that sounds like you. A QivaLabs product, built in Udaipur, India.</p>
+    </div>
+    <div>
+      <h4>Product</h4>
+      <ul><li><a href="#how">How it works</a></li><li><a href="#features">Features</a></li><li><a href="#safety">Account safety</a></li><li><a href="#pricing">Pricing</a></li></ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul><li><a href="#founding">Founding members</a></li><li><a href="#faq">FAQ</a></li><li><a data-contact href="#">Contact</a></li><li><button class="linkbtn foot-link" type="button" data-privacy>Privacy notice</button></li></ul>
+    </div>
+    <div class="legal">
+      <span>© <span id="yr"></span> QivaLabs LLP. All rights reserved.</span>
+      <span>Qiva Reach is not affiliated with or endorsed by LinkedIn Corporation. LinkedIn is a trademark of LinkedIn Corporation.</span>
+    </div>
+  </div>
+</footer>
+
+<dialog id="privacy" aria-labelledby="privacyTitle">
+  <div class="dlg">
+    <h2 id="privacyTitle">Waitlist privacy notice</h2>
+    <p><b>Who we are.</b> Qiva Reach is a product of QivaLabs LLP, Udaipur, Rajasthan, India.</p>
+    <p><b>What we collect.</b> Your email address and, if you choose, your role. We also record the plan you clicked, the invite code that brought you, the campaign tags in the link you used, and the date you joined.</p>
+    <p><b>Why.</b> To tell you when Qiva Reach launches, send your founding-member price, invite you to the beta, and understand which channels bring people in. We do not sell your data or share it for advertising.</p>
+    <p><b>Where it is kept.</b> With the service providers we use to run the waitlist (a database or spreadsheet provider and an email provider), under access limited to the two founders.</p>
+    <p><b>How long.</b> Until 12 months after launch, or until you ask us to delete it, whichever is sooner.</p>
+    <p><b>Your choices.</b> Every email has an unsubscribe link. To see, correct or delete your data, email <a data-contact="text" href="#"></a>.</p>
+    <button class="btn btn-ink" id="privacyClose" type="button">Close</button>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* =====================================================================
+   CONFIG — the only part you edit before going live.
+   See README-waitlist.md for the 5-minute setup.
+
+   provider:
+     'google'   → signups go to a Google Sheet through an Apps Script
+                  web app (paste its URL into googleScriptUrl)
+     'supabase' → signups go to a Supabase table through the
+                  join_waitlist function (fill supabaseUrl + anon key)
+     'demo'     → nothing is sent anywhere; signups stay in this browser
+   ===================================================================== */
+const CONFIG = {
+  provider: "supabase",
+  googleScriptUrl: "",
+  supabaseUrl: "https://bzkwtanutwbzcdvlqjay.supabase.co",
+  supabaseAnonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJ6a3d0YW51dHdiemNkdmxxamF5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE2NTU5MDEsImV4cCI6MjEwNzIzMTkwMX0.-gSvRUd9LHeOflbrKi38mwqIjSvGh2a74FFO66XB8fE",
+  contactEmail: "admin@qivareach.com",
+  showCountFrom: 100,
+  posthogKey: "",
+  posthogHost: "https://us.i.posthog.com",
+  shareText: 'I just joined the Qiva Reach waitlist: an AI co-pilot that helps you post on LinkedIn every week, in your own voice.'
+};
+
+(() => {
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const store = {
+    get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+    del(k) { try { localStorage.removeItem(k); } catch {} }
+  };
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------------- optional analytics ---------------- */
+  const track = (event, props) => { try { window.posthog && window.posthog.capture(event, props); } catch {} };
+  if (CONFIG.posthogKey) {
+    const s = document.createElement('script');
+    s.src = CONFIG.posthogHost.replace(/\/$/, '') + '/static/array.js'; s.async = true;
+    s.onload = () => { try { window.posthog.init(CONFIG.posthogKey, { api_host: CONFIG.posthogHost, person_profiles: 'identified_only' }); track('waitlist_page_viewed'); } catch {} };
+    document.head.appendChild(s);
+  }
+
+  /* ---------------- toast, nav, footer ---------------- */
+  const toastEl = $('#toast'); let tt;
+  const toast = m => { toastEl.textContent = m; toastEl.classList.add('show'); clearTimeout(tt); tt = setTimeout(() => toastEl.classList.remove('show'), 2200); };
+  const nav = $('#nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
+  $('#yr').textContent = new Date().getFullYear();
+  $$('[data-contact]').forEach(a => { a.href = 'mailto:' + CONFIG.contactEmail; if (a.dataset.contact === 'text') a.textContent = CONFIG.contactEmail; });
+
+  /* ---------------- privacy dialog ---------------- */
+  const dlg = $('#privacy');
+  $$('[data-privacy]').forEach(b => b.addEventListener('click', () => { if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', ''); }));
+  $('#privacyClose').addEventListener('click', () => dlg.close ? dlg.close() : dlg.removeAttribute('open'));
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+  /* ---------------- hook lab ---------------- */
+  const TONES = {
+    story: {
+      hooks: ['Six months ago I deleted a LinkedIn post after 40 minutes. It had two likes, one from my mum.', 'My best client came from a post I almost didn\'t publish.', 'I wrote 90 LinkedIn posts last year. Only 6 brought me customers.', 'The first time a stranger quoted my post back to me, I knew something had changed.'],
+      rest: ['Here is what I changed, and what I wish I had done from day one.', '1. I stopped writing for everyone.<br>2. I wrote the hook last, not first.<br>3. I asked five people in my niche to show up in the first hour.']
+    },
+    direct: {
+      hooks: ['Most founders post on LinkedIn for six weeks, see nothing, and quit. Here\'s the fix.', 'Your post isn\'t bad. Your first two lines are.', 'Stop posting at 9 AM because a guru told you to.', 'Three posts a week. One sitting. Here\'s the system.'],
+      rest: ['Write the hook last. Cut every line that does not earn the next one.', 'Then make sure ten real people in your niche see it in the first hour. That is the whole game.']
+    },
+    data: {
+      hooks: ['I tracked 120 of my posts for a year. Hooks under 12 words did best.', '68% of my profile visits came from comments, not posts.', 'Posts I published on Tuesday got almost twice the comments of Friday posts.', 'I tested 4 hook styles across 40 posts. Questions came last.'],
+      rest: ['These are my numbers, not universal rules. Yours will be different.', 'The point is to measure your own patterns instead of copying someone else\'s calendar.']
+    },
+    hinglish: {
+      hooks: ['LinkedIn pe post karna easy hai. Consistent rehna? Bilkul nahi.', 'Mera sabse accha client ek "chhote se" post se aaya tha.', 'Har din likhne ka time nahi hai? Same. Toh maine system bana liya.', 'Founder ho aur LinkedIn pe chup ho? Yeh mistake mat karo.'],
+      rest: ['Sunday ko 45 minute. Poore hafte ke posts ready.', 'Aur pehle ghante mein apne niche ke log khud aate hain engage karne. No bots, no jugaad.']
+    }
+  };
+  let tone = 'story', hi = 0, typing;
+  const hookEl = $('#hook'), restEl = $('#rest'), foldBtn = $('#foldBtn');
+  const markFirst = t => { const w = t.split(' '), c = Math.min(4, w.length); return `<mark>${w.slice(0, c).join(' ')}</mark> ${w.slice(c).join(' ')}`; };
+  const renderHook = animate => {
+    const t = TONES[tone].hooks[hi];
+    $('#hookCount').textContent = `Hook ${hi + 1} of ${TONES[tone].hooks.length}`;
+    $('#foldWords').textContent = `${t.split(/\s+/).length} words`;
+    restEl.innerHTML = TONES[tone].rest.map(p => `<p>${p}</p>`).join('');
+    clearInterval(typing);
+    if (animate && !reduce) {
+      let i = 0; hookEl.textContent = '';
+      typing = setInterval(() => { i += 2; hookEl.textContent = t.slice(0, i); if (i >= t.length) { clearInterval(typing); hookEl.innerHTML = markFirst(t); } }, 18);
+    } else {
+      hookEl.classList.add('swap');
+      setTimeout(() => { hookEl.innerHTML = markFirst(t); hookEl.classList.remove('swap'); }, reduce ? 0 : 160);
+    }
+  };
+  $('#nextHook').addEventListener('click', () => { hi = (hi + 1) % TONES[tone].hooks.length; renderHook(false); track('hook_lab_next', { tone }); });
+  $$('.tone').forEach(b => b.addEventListener('click', () => {
+    $$('.tone').forEach(x => x.setAttribute('aria-pressed', 'false'));
+    b.setAttribute('aria-pressed', 'true'); tone = b.dataset.tone; hi = 0; renderHook(false); track('hook_lab_tone', { tone });
+  }));
+  foldBtn.addEventListener('click', () => {
+    const open = !restEl.classList.contains('open');
+    restEl.classList.toggle('open', open); foldBtn.setAttribute('aria-expanded', open); foldBtn.textContent = open ? 'see less' : 'see more';
+  });
+  renderHook(true);
+
+  /* ---------------- pricing ---------------- */
+  const PLANS = [
+    { id: 'free', name: 'Free', who: 'Try the writer before you commit.', inr: 0, usd: 0, items: ['5 AI posts a month', '20 AI comment suggestions', '1 public Circle', 'Copy-and-post (no scheduling)'] },
+    { id: 'starter', name: 'Starter', who: 'Consultants and job seekers posting weekly.', inr: 499, usd: 12, items: ['30 AI posts a month', '300 AI comment suggestions', 'Scheduling and calendar', '2 Circles'] },
+    { id: 'pro', name: 'Pro', who: 'Founders and creators posting 3–5 times a week.', inr: 1499, usd: 29, pick: true, items: ['Unlimited drafts (fair use)', 'Hook lab and carousels', 'Analytics and weekly insights', '5 Circles and reply assistant'] },
+    { id: 'agency', name: 'Agency', who: 'Agencies and teams managing many profiles.', inr: 4999, usd: 79, items: ['5 client profiles included', 'Approval links for clients', 'Private Circles for your team', 'Extra profiles ₹799 / $15 each'] }
+  ];
+  let cur = 'inr', bill = 'year', planInterest = '';
+  const fmt = (n, c) => c === 'inr' ? '₹' + Math.round(n).toLocaleString('en-IN') : '$' + (Math.round(n * 100) / 100).toLocaleString('en-US', { maximumFractionDigits: n % 1 ? 2 : 0 });
+  const renderPlans = () => {
+    $('#plans').innerHTML = PLANS.map(p => {
+      const m = p[cur], perMonth = bill === 'year' ? m * 10 / 12 : m, yearly = m * 10;
+      const found = m > 0 && bill === 'year' ? `Founding member: ${fmt(yearly * 0.6, cur)} a year` : '';
+      const billed = m === 0 ? 'Free forever' : bill === 'year' ? `Billed ${fmt(yearly, cur)} yearly` : 'Billed monthly';
+      return `<article class="plan${p.pick ? ' pick' : ''}"><h3>${p.name}</h3><p class="who-for">${p.who}</p>
+        <div class="price">${fmt(perMonth, cur)}<small> / month</small></div><p class="billed">${billed}</p><p class="founding">${found}</p>
+        <ul>${p.items.map(i => `<li>${i}</li>`).join('')}</ul>
+        <a class="btn ${p.pick ? 'btn-gold' : 'btn-line'}" href="#join" data-plan="${p.id}">Join the waitlist</a></article>`;
+    }).join('');
+  };
+  $$('[data-cur]').forEach(b => b.addEventListener('click', () => { cur = b.dataset.cur; $$('[data-cur]').forEach(x => x.setAttribute('aria-pressed', x === b)); renderPlans(); }));
+  $$('[data-bill]').forEach(b => b.addEventListener('click', () => { bill = b.dataset.bill; $$('[data-bill]').forEach(x => x.setAttribute('aria-pressed', x === b)); renderPlans(); }));
+  try { if (!/^Asia\/(Calcutta|Kolkata)$/.test(Intl.DateTimeFormat().resolvedOptions().timeZone)) { cur = 'usd'; $$('[data-cur]').forEach(x => x.setAttribute('aria-pressed', x.dataset.cur === 'usd')); } } catch {}
+  document.addEventListener('click', e => { const a = e.target.closest('[data-plan]'); if (a) { planInterest = a.dataset.plan; track('pricing_plan_clicked', { plan: planInterest }); setTimeout(() => $('#email1').focus({ preventScroll: true }), 450); } });
+  renderPlans();
+
+  /* ---------------- backend ---------------- */
+  const backend = {
+    ready() {
+      if (CONFIG.provider === 'google') return !!CONFIG.googleScriptUrl;
+      if (CONFIG.provider === 'supabase') return !!(CONFIG.supabaseUrl && CONFIG.supabaseAnonKey);
+      return false;
+    },
+    async join(payload) {
+      if (CONFIG.provider === 'google') {
+        // text/plain avoids a CORS preflight, which Apps Script cannot answer
+        const r = await fetch(CONFIG.googleScriptUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(payload) });
+        if (!r.ok) throw new Error('http ' + r.status);
+        return r.json();
+      }
+      if (CONFIG.provider === 'supabase') {
+        const r = await fetch(CONFIG.supabaseUrl.replace(/\/$/, '') + '/rest/v1/rpc/join_waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', apikey: CONFIG.supabaseAnonKey, Authorization: 'Bearer ' + CONFIG.supabaseAnonKey },
+          body: JSON.stringify({ p: payload })
+        });
+        if (!r.ok) throw new Error('http ' + r.status);
+        return r.json();
+      }
+      // demo mode: keep it in this browser so the flow can be tested
+      const list = store.get('qr_waitlist_demo') || [];
+      let i = list.findIndex(x => x.email === payload.email);
+      const existing = i > -1;
+      if (!existing) { list.push({ ...payload, ref_code: localCode(payload.email) }); i = list.length - 1; store.set('qr_waitlist_demo', list); }
+      console.info('[Qiva Reach] Demo mode: signup stored in this browser only. Set CONFIG.provider to collect real signups.');
+      return { ok: true, existing, ref_code: list[i].ref_code, position: null, referrals: list.filter(x => x.referred_by === list[i].ref_code).length };
+    },
+    async count() {
+      try {
+        if (CONFIG.provider === 'google') { const r = await fetch(CONFIG.googleScriptUrl); return (await r.json()).count; }
+        if (CONFIG.provider === 'supabase') {
+          const r = await fetch(CONFIG.supabaseUrl.replace(/\/$/, '') + '/rest/v1/rpc/waitlist_count', { method: 'POST', headers: { 'Content-Type': 'application/json', apikey: CONFIG.supabaseAnonKey, Authorization: 'Bearer ' + CONFIG.supabaseAnonKey }, body: '{}' });
+          return await r.json();
+        }
+      } catch {}
+      return null;
+    }
+  };
+  const localCode = email => { let h = 2166136261; for (const ch of email) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); } return (h >>> 0).toString(36).slice(0, 7); };
+
+  /* live count — only real numbers, only past a threshold */
+  if (backend.ready()) backend.count().then(n => {
+    if (typeof n === 'number' && n >= CONFIG.showCountFrom) { const el = $('#wlCount'); el.textContent = `${n.toLocaleString('en-IN')} professionals have joined so far.`; el.hidden = false; }
+  });
+
+  /* ---------------- waitlist forms ---------------- */
+  const params = new URLSearchParams(location.search);
+  const incomingRef = (params.get('ref') || '').replace(/[^a-z0-9]/gi, '').slice(0, 12);
+  const utm = ['utm_source', 'utm_medium', 'utm_campaign'].reduce((o, k) => (params.get(k) && (o[k] = params.get(k).slice(0, 80)), o), {});
+  const baseUrl = location.href.split(/[?#]/)[0];
+  const validEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) && v.length <= 254;
+
+  const showDone = (res, focusIn) => {
+    const link = `${baseUrl}?ref=${res.ref_code}`;
+    const text = `${CONFIG.shareText} ${link}`;
+    $$('[data-wl]').forEach(w => {
+      w.classList.add('is-done');
+      $('.done-title', w).textContent = res.existing ? "You're already on the list." : "You're on the list.";
+      const pos = $('.done-pos', w);
+      const bits = [];
+      if (res.position) bits.push(`You are number ${Number(res.position).toLocaleString('en-IN')} on the waitlist.`);
+      if (res.referrals) bits.push(`${res.referrals} ${res.referrals === 1 ? 'person has' : 'people have'} joined through your link.`);
+      pos.textContent = bits.join(' '); pos.hidden = !bits.length;
+      $('.ref-link', w).value = link;
+      $('.share-li', w).href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(link);
+      $('.share-wa', w).href = 'https://wa.me/?text=' + encodeURIComponent(text);
+    });
+    if (focusIn) $('.wl-done', focusIn).focus();
+  };
+  const saved = store.get('qr_waitlist');
+  if (saved && saved.ref_code) showDone(saved);
+
+  $$('[data-wl]').forEach(w => {
+    const form = $('form', w), email = $('input[type=email]', form), role = $('select', form), msg = $('.wl-msg', form), btn = $('button[type=submit]', form);
+    const hp = $('input[name=website]', form);
+    const defaultMsg = msg.textContent;
+    const setErr = t => { msg.classList.add('err'); msg.textContent = t; };
+    email.addEventListener('input', () => { if (email.classList.contains('err') && validEmail(email.value.trim())) { email.classList.remove('err'); msg.classList.remove('err'); msg.textContent = defaultMsg; } });
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const v = email.value.trim().toLowerCase();
+      if (!validEmail(v)) { email.classList.add('err'); setErr('Enter an email like name@company.com.'); email.focus(); return; }
+      const payload = {
+        email: v, role: role.value || '', plan_interest: planInterest, referred_by: incomingRef, website: hp ? hp.value : '',
+        source: w.id === 'join' ? 'hero' : 'founding', ...utm, page: baseUrl
+      };
+      btn.disabled = true; const label = btn.textContent; btn.textContent = 'Joining…';
+      try {
+        const res = await backend.join(payload);
+        if (!res || !res.ok) {
+          if (res && res.error === 'invalid_email') { email.classList.add('err'); setErr('Enter an email like name@company.com.'); return; }
+          throw new Error((res && res.error) || 'unknown');
+        }
+        if (!res.ref_code) { setErr('Something blocked your signup. Refresh the page and try again.'); return; } // honeypot path
+        const keep = { ref_code: res.ref_code, position: res.position || null, referrals: res.referrals || 0, existing: !!res.existing };
+        store.set('qr_waitlist', keep);
+        track('waitlist_joined', { source: payload.source, role: payload.role, plan_interest: payload.plan_interest, referred: !!incomingRef, existing: keep.existing });
+        showDone(keep, w);
+      } catch (err) {
+        setErr("We couldn't save your email. Check your connection and try again, or email " + CONFIG.contactEmail + '.');
+      } finally { btn.disabled = false; btn.textContent = label; }
+    });
+    $('.copy-ref', w).addEventListener('click', async () => {
+      const input = $('.ref-link', w);
+      try { await navigator.clipboard.writeText(input.value); } catch { input.select(); document.execCommand('copy'); }
+      toast('Invite link copied'); track('invite_link_copied');
+    });
+    $('.not-you', w).addEventListener('click', () => {
+      store.del('qr_waitlist');
+      $$('[data-wl]').forEach(x => { x.classList.remove('is-done'); $('form', x).reset(); });
+      $('#email1').focus();
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
