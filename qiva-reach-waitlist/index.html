@@ -75,11 +75,11 @@ p{margin:0}
 .btn[disabled]{opacity:.55;cursor:progress}
 
 /* hero */
-.hero{padding:72px 0 96px}
-.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero{padding:56px 0 96px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
 @media (max-width:960px){.hero .wrap{grid-template-columns:1fr;gap:48px}.hero{padding:48px 0 72px}}
-.hero h1{font-size:clamp(44px,6.4vw,84px);font-weight:800;letter-spacing:-.045em;line-height:.98}
-.hero .lede{font-size:20px;line-height:1.55;color:#3A3F5C;margin-top:24px;max-width:36ch}
+.hero h1{font-size:clamp(40px,5.2vw,68px);font-weight:800;letter-spacing:-.04em;line-height:1;max-width:13ch}
+.hero .lede{font-size:19px;line-height:1.6;color:#3A3F5C;margin-top:22px;max-width:46ch}
 @media (max-width:560px){.hero .lede{font-size:18px}}
 
 /* form */
@@ -130,18 +130,20 @@ p{margin:0}
 .c-note{font-size:13px;color:var(--slate);margin-top:12px;text-align:center}
 
 /* sections */
-section.s{padding:104px 0;border-top:1px solid var(--line)}
+section.s{padding:96px 0}
 @media (max-width:720px){section.s{padding:72px 0}}
-.s-head{max-width:720px;margin-bottom:48px}
-.s-head h2{font-size:clamp(34px,4.6vw,56px);font-weight:780;letter-spacing:-.035em}
-.s-head p{font-size:19px;color:var(--slate);margin-top:16px;max-width:58ch}
+.s-head{display:grid;grid-template-columns:1fr 1fr;gap:16px 64px;align-items:end;margin-bottom:48px}
+.s-head h2{font-size:clamp(32px,4vw,50px);font-weight:780;letter-spacing:-.035em;line-height:1.05}
+.s-head p{font-size:18px;color:var(--slate);max-width:52ch}
+@media (max-width:860px){.s-head{grid-template-columns:1fr;margin-bottom:36px}}
 
 /* pains */
-.pains{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
-.pains div{padding:22px 0;border-bottom:2px dashed var(--line)}
+.pains{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pains div{padding:26px;background:var(--white);border:1px solid var(--line);border-radius:var(--r-l)}
 .pains h3{font-size:22px;font-weight:700}
 .pains p{color:var(--slate);margin-top:6px}
-@media (max-width:760px){.pains{grid-template-columns:1fr}}
+@media (max-width:960px){.pains{grid-template-columns:1fr 1fr}}
+@media (max-width:620px){.pains{grid-template-columns:1fr}}
 
 /* steps (a real sequence) */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:st;list-style:none;margin:0;padding:0}
@@ -155,8 +157,8 @@ section.s{padding:104px 0;border-top:1px solid var(--line)}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
 
 /* features */
-.feat{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.feat article{padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white)}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.feat article{padding:28px;border:1px solid var(--line);border-radius:var(--r-l);background:var(--white)}
 .feat h3{font-size:22px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
 .feat .when{font:600 12.5px var(--body);letter-spacing:0;color:var(--peacock);background:var(--peacock-soft);border-radius:999px;padding:3px 10px;white-space:nowrap}
 .feat .when.later{color:var(--slate);background:var(--paper)}
@@ -216,7 +218,11 @@ section.s{padding:104px 0;border-top:1px solid var(--line)}
 @media (max-width:860px){.cta .wrap{grid-template-columns:1fr;gap:28px}}
 
 /* faq */
-.faq{max-width:820px}
+.faq-layout{display:grid;grid-template-columns:1fr 1.6fr;gap:64px;align-items:start}
+.faq-layout .s-head{display:block;position:sticky;top:96px;margin:0}
+.faq-layout .s-head p{margin-top:14px}
+@media (max-width:900px){.faq-layout{grid-template-columns:1fr;gap:24px}.faq-layout .s-head{position:static}}
+.faq{border-top:1px solid var(--line)}
 .faq details{border-bottom:1px solid var(--line)}
 .faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0;font:700 20px var(--display);letter-spacing:-.015em}
 .faq summary::-webkit-details-marker{display:none}
@@ -254,9 +260,9 @@ footer .legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);paddin
 .road{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
 .road::before{content:"";position:absolute;left:0;right:0;top:15px;border-top:2px dashed var(--marigold)}
 .road>li{position:relative;padding-top:48px}
-.road>li::before{content:"";position:absolute;top:8px;left:0;width:16px;height:16px;border-radius:50%;background:var(--paper);border:3px solid var(--ink)}
+.road>li::before{content:"";position:absolute;top:8px;left:0;width:16px;height:16px;border-radius:50%;background:var(--white);border:3px solid var(--ink)}
 .road>li.now::before{background:var(--marigold);border-color:var(--marigold)}
-.when-pill{display:inline-block;font:700 13px var(--body);background:var(--white);border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-bottom:10px}
+.when-pill{display:inline-block;font:700 13px var(--body);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-bottom:10px}
 .road .now .when-pill{background:var(--marigold);border-color:var(--marigold)}
 .road h3{font-size:24px}
 .road p,.road ul{color:var(--slate);font-size:15.5px;margin-top:8px}
@@ -279,19 +285,23 @@ dialog::backdrop{background:rgba(27,31,59,.55)}
 .what-grid p{color:var(--slate);margin-top:8px}
 .for-line{margin-top:36px;font:600 17px var(--display);color:var(--ink)}
 @media (max-width:820px){.what-grid{grid-template-columns:1fr;gap:24px}}
-.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:56px;align-items:center}
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:start}
 .about h2{font-size:clamp(34px,4.6vw,56px);font-weight:780;letter-spacing:-.035em;line-height:1.05}
-.about-lede{font-size:19px;color:var(--slate);margin-top:16px;max-width:56ch}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:28px 0 0;border-top:1px solid var(--line)}
+.about-lede{font-size:18px;color:var(--slate);margin-top:18px;max-width:56ch}
+.facts{margin:0;background:var(--white);border:1px solid var(--line);border-radius:var(--r-l);padding:8px 24px}
 .facts div{padding:14px 0;border-bottom:1px solid var(--line)}
-.facts div:nth-child(odd){padding-right:16px}
+.facts div:last-child{border-bottom:0}
 .facts dt{font:700 13.5px var(--display);color:var(--slate)}
 .facts dd{margin:2px 0 0;font-size:16px}
-.badge-wrap{display:flex;flex-direction:column;align-items:center;gap:20px}
-.mii-badge{width:min(240px,70vw)}
-.mii-badge svg{width:100%;height:auto}
-.official-logo{width:min(220px,60vw);height:auto;object-fit:contain}
-@media (max-width:820px){.about-grid{grid-template-columns:1fr;gap:32px}.facts{grid-template-columns:1fr}.facts div:nth-child(odd){padding-right:0}}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr;gap:28px}}
+
+/* section rhythm: each section sits on its own band */
+#what,#how,#roadmap,#faq{background:var(--white)}
+#why,#features,#pricing,#about{background:var(--paper)}
+#what .what-grid>div{background:var(--paper);border-radius:var(--r-l);padding:26px;border-top:0}
+#what .what-grid>div:first-child{box-shadow:inset 0 3px 0 var(--marigold)}
+#how .steps li::before{box-shadow:0 0 0 6px var(--white)}
+.faq details:first-child summary{padding-top:22px}
 </style>
 </head>
 <body>
@@ -530,6 +540,43 @@ dialog::backdrop{background:rgba(27,31,59,.55)}
     </div>
   </section>
 
+
+  <!-- FAQ -->
+  <section class="s" id="faq">
+    <div class="wrap">
+      <div class="faq-layout">
+      <div class="s-head"><h2>Frequently asked questions.</h2><p>Still unsure? Email us and a founder will reply.</p></div>
+      <div class="faq">
+        <details open><summary>What is Qiva Reach?</summary><p>Qiva Reach is an AI LinkedIn post writer, scheduler and engagement community in one workspace. It drafts LinkedIn posts, hooks and comments in your own voice, publishes the posts you approve through LinkedIn's official API, and connects you with a small group of real people in your niche who engage with each other's posts.</p></details>
+        <details><summary>Who is Qiva Reach for?</summary><p>Founders, consultants, coaches, creators, B2B marketers and agencies who want to grow on LinkedIn and build a personal brand, without hiring a ghostwriter. It works anywhere LinkedIn does.</p></details>
+        <details><summary>Is Qiva Reach a LinkedIn automation tool?</summary><p>No. Qiva Reach never likes, comments, connects or messages on your behalf. It signs you in with LinkedIn's official login and publishes only the posts you have approved and scheduled. Every other action on LinkedIn is a click you make yourself.</p></details>
+        <details><summary>Will using Qiva Reach get my LinkedIn account restricted?</summary><p>Qiva Reach is designed to stay within LinkedIn's rules: official login, official publishing API, and no automated likes, comments, messages or scraping. No tool can promise LinkedIn's decisions, but we built this one to avoid the behaviour that gets accounts flagged.</p></details>
+        <details><summary>What is a Circle? Is it an engagement pod?</summary><p>A Circle is a small group of 20 to 50 professionals in a similar niche. When a member posts, the others get an alert and decide for themselves whether to react or comment. Unlike an engagement pod, nothing is automated, and a fairness score keeps it balanced.</p></details>
+        <details><summary>Will the posts sound like AI?</summary><p>They start from your own past posts, your tone settings and a list of phrases you never use. Every edit you make teaches it more. You stay the editor.</p></details>
+        <details><summary>Can my agency use it for clients?</summary><p>Yes. The Agency plan includes five client profiles, each with its own voice, plus approval links for clients and roles for your team.</p></details>
+        <details><summary>When does Qiva Reach launch?</summary><p>The private beta starts in December 2026 and the public launch is planned for January 2027. Waitlist members hear first, and the first 200 paying customers get 40% off yearly plans.</p></details>
+        <details><summary>What happens to my data?</summary><p>Your posts and voice profile are private to your workspace. You can export or delete your data at any time. We never sell data or use your posts to train models for anyone else.</p></details>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="s about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <h2>About Qiva Reach.</h2>
+        <p class="about-lede">Qiva Reach is built by QivaLabs LLP, a technology startup based in Udaipur, India, and founded in 2026 by Rajamuddin and Arman Hussain. QivaLabs is recognised as a startup by the Department for Promotion of Industry and Internal Trade (DPIIT), Government of India. We build for professionals worldwide.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Company</dt><dd>QivaLabs LLP</dd></div>
+        <div><dt>Founded</dt><dd>February 2026</dd></div>
+        <div><dt>Headquarters</dt><dd>Udaipur, Rajasthan, India</dd></div>
+        <div><dt>Recognition</dt><dd>DPIIT-recognised startup (DIPP247112)</dd></div>
+        <div><dt>Contact</dt><dd><a data-contact="text" href="#"></a></dd></div>
+      </dl>
+    </div>
+  </section>
   <!-- FOUNDING CTA -->
   <section class="s cta" id="founding">
     <div class="wrap">
@@ -578,54 +625,6 @@ dialog::backdrop{background:rgba(27,31,59,.55)}
       </div>
     </div>
   </section>
-
-  <!-- FAQ -->
-  <section class="s" id="faq">
-    <div class="wrap">
-      <div class="s-head"><h2>Frequently asked questions.</h2></div>
-      <div class="faq">
-        <details open><summary>What is Qiva Reach?</summary><p>Qiva Reach is an AI LinkedIn post writer, scheduler and engagement community in one workspace. It drafts LinkedIn posts, hooks and comments in your own voice, publishes the posts you approve through LinkedIn's official API, and connects you with a small group of real people in your niche who engage with each other's posts.</p></details>
-        <details><summary>Who is Qiva Reach for?</summary><p>Founders, consultants, coaches, creators, B2B marketers and agencies who want to grow on LinkedIn and build a personal brand, without hiring a ghostwriter. It works anywhere LinkedIn does.</p></details>
-        <details><summary>Is Qiva Reach a LinkedIn automation tool?</summary><p>No. Qiva Reach never likes, comments, connects or messages on your behalf. It signs you in with LinkedIn's official login and publishes only the posts you have approved and scheduled. Every other action on LinkedIn is a click you make yourself.</p></details>
-        <details><summary>Will using Qiva Reach get my LinkedIn account restricted?</summary><p>Qiva Reach is designed to stay within LinkedIn's rules: official login, official publishing API, and no automated likes, comments, messages or scraping. No tool can promise LinkedIn's decisions, but we built this one to avoid the behaviour that gets accounts flagged.</p></details>
-        <details><summary>What is a Circle? Is it an engagement pod?</summary><p>A Circle is a small group of 20 to 50 professionals in a similar niche. When a member posts, the others get an alert and decide for themselves whether to react or comment. Unlike an engagement pod, nothing is automated, and a fairness score keeps it balanced.</p></details>
-        <details><summary>Will the posts sound like AI?</summary><p>They start from your own past posts, your tone settings and a list of phrases you never use. Every edit you make teaches it more. You stay the editor.</p></details>
-        <details><summary>Can my agency use it for clients?</summary><p>Yes. The Agency plan includes five client profiles, each with its own voice, plus approval links for clients and roles for your team.</p></details>
-        <details><summary>When does Qiva Reach launch?</summary><p>The private beta starts in December 2026 and the public launch is planned for January 2027. Waitlist members hear first, and the first 200 paying customers get 40% off yearly plans.</p></details>
-        <details><summary>What happens to my data?</summary><p>Your posts and voice profile are private to your workspace. You can export or delete your data at any time. We never sell data or use your posts to train models for anyone else.</p></details>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="s about" id="about">
-    <div class="wrap about-grid">
-      <div>
-        <h2>Made in India, for professionals everywhere.</h2>
-        <p class="about-lede">Qiva Reach is built by QivaLabs LLP, a technology startup in Udaipur, India, founded in 2026 by Rajamuddin and Arman Hussain. QivaLabs is recognised as a startup by the Department for Promotion of Industry and Internal Trade (DPIIT), Government of India.</p>
-        <dl class="facts">
-          <div><dt>Company</dt><dd>QivaLabs LLP</dd></div>
-          <div><dt>Founded</dt><dd>February 2026</dd></div>
-          <div><dt>Based in</dt><dd>Udaipur, Rajasthan, India</dd></div>
-          <div><dt>Recognition</dt><dd>DPIIT-recognised startup, DIPP247112</dd></div>
-        </dl>
-      </div>
-      <div class="badge-wrap">
-        <img class="official-logo" src="make-in-india.png" alt="Make in India" width="220" height="220" style="display:none" onload="this.style.display='block'" onerror="this.remove()">
-        <div class="mii-badge" role="img" aria-label="Made in India">
-          <svg viewBox="0 0 200 200" aria-hidden="true">
-            <defs><path id="mii-arc" d="M100 100 m-74 0 a74 74 0 1 1 148 0 a74 74 0 1 1 -148 0"/></defs>
-            <circle cx="100" cy="100" r="96" fill="#1B1F3B"/>
-            <circle cx="100" cy="100" r="86" fill="none" stroke="#F2A900" stroke-width="2" stroke-dasharray="6 6"/>
-            <text font-family="Figtree, sans-serif" font-size="13" font-weight="700" letter-spacing="4" fill="#C9CCE0"><textPath href="#mii-arc" startOffset="0">QIVALABS · UDAIPUR · QIVALABS · UDAIPUR ·</textPath></text>
-            <circle cx="100" cy="100" r="58" fill="#F2A900"/>
-            <text x="100" y="94" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="25" font-weight="800" fill="#1B1F3B">Made in</text>
-            <text x="100" y="121" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-size="25" font-weight="800" fill="#1B1F3B">India</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
@@ -635,7 +634,7 @@ dialog::backdrop{background:rgba(27,31,59,.55)}
         <svg width="32" height="32" viewBox="0 0 64 64" aria-hidden="true"><circle cx="28" cy="32" r="16" fill="none" stroke="#fff" stroke-width="8"/><path d="M39.5 43.5 50 54" stroke="#fff" stroke-width="8" stroke-linecap="round"/><circle cx="51" cy="12" r="7" fill="#F2A900"/></svg>
         qiva reach
       </a>
-      <p style="margin-top:14px;max-width:36ch">AI LinkedIn post writer, scheduler and engagement community. Made in India by QivaLabs LLP.</p>
+      <p style="margin-top:14px;max-width:36ch">AI LinkedIn post writer, scheduler and engagement community. A product of QivaLabs LLP.</p>
     </div>
     <div>
       <h4>Product</h4>
